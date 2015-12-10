@@ -8,6 +8,9 @@ function button_click() {
 
     console.log("trans(" + trans_x + "," + trans_y  + "," + trans_z + "), rot=(" + rot_x + "," + rot_y + ","  + rot_z + ")");
 
+    //
+    // http://threejs.org/docs/api/math/Matrix4.html
+    //
     var mt = new THREE.Matrix4();
     mt.setPosition(new THREE.Vector3(trans_x, trans_y, trans_z));
 
