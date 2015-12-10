@@ -6,6 +6,8 @@ function button_click() {
     var rot_y = parseFloat($("#rotate_y").val()) / 180.0 * Math.PI;
     var rot_z = parseFloat($("#rotate_z").val()) / 180.0 * Math.PI;
 
+    console.log("trans(" + trans_x + "," + trans_y  + "," + trans_z + "), rot=(" + rot_x + "," + rot_y + ","  + rot_z + ")");
+
     var mt = new THREE.Matrix4();
     mt.setPosition(new THREE.Vector3(trans_x, trans_y, trans_z));
 
@@ -13,10 +15,10 @@ function button_click() {
     mx.makeRotationX(rot_x);
 
     var my = new THREE.Matrix4();
-    my.makeRotationX(rot_y);
+    my.makeRotationY(rot_y);
 
     var mz = new THREE.Matrix4();
-    mz.makeRotationX(rot_z);
+    mz.makeRotationZ(rot_z);
 
     var m = new THREE.Matrix4();
     m.identity();
